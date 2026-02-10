@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=0.8, maximum-scale=1.0, user-scalable=no"
+        />
+        <title>💕 A Special Question For lalabs 💕</title>
+        <link rel="stylesheet" href="./assets/style.css" />
+    </head>
+    <body>
+        <!-- Floating Items Background -->
+        <div class="hearts-container" id="heartsContainer"></div>
+
+        <!-- Small Decorative Elements -->
+        <div class="decoration deco-1">🌸</div>
+        <div class="decoration deco-2">🌺</div>
+        <div class="decoration deco-3">🌷</div>
+        <div class="decoration deco-4">🌹</div>
+
+        <!-- Giant Teddy Bear Wrapper -->
+        <div class="teddy-wrapper">
+            <!-- Floating Hearts Above Teddy -->
+            <div class="teddy-hearts">
+                <span class="teddy-love">💕</span>
+                <span class="teddy-love">💖</span>
+                <span class="teddy-love">💗</span>
+            </div>
+
+            <!-- Teddy Head (on top) -->
+            <div class="teddy-head">🧸</div>
+
+            <!-- Teddy Body Section -->
+            <div class="teddy-body">
+                <!-- Blurred Teddy Torso Behind Card -->
+                <div class="teddy-torso">🧸</div>
+
+                <!-- Left Paw -->
+                <div class="teddy-paw-left">🐾</div>
+
+                <!-- Main Card (on teddy's torso) -->
+                <div class="card" id="mainCard">
+                    <div class="big-heart">💖</div>
+
+                    <h1 class="title">Hey <span class="name-highlight">lalabs</span>! ✨</h1>
+                    <p class="subtitle">I have something very special to ask you...</p>
+
+                    <h2 class="question">
+                        <span class="name-in-question">lalabs</span>, Can I be your Valentine? 💕
+                    </h2>
+
+                    <div class="buttons-container" id="buttonsContainer">
+                        <button class="btn btn-yes" id="yesBtn" onclick="sayYes()">Yes! 💖</button>
+                        <button class="btn btn-no" id="noBtn" onmouseover="runAway()" onclick="runAway()">
+                            No
+                        </button>
+                    </div>
+
+                    <div class="love-note">
+                        <p>Every love story is beautiful, but <span>ours is my favorite</span> 💕</p>
+                    </div>
+                </div>
+
+                <!-- Right Paw -->
+                <div class="teddy-paw-right">🐾</div>
+            </div>
+
+            <!-- Teddy Feet (at bottom) -->
+            <div class="teddy-feet">
+                <div class="teddy-foot teddy-foot-left">🐾</div>
+                <div class="teddy-foot teddy-foot-right">🐾</div>
+            </div>
+        </div>
+
+        <!-- Hover Message -->
+        <div class="hover-message" id="hoverMessage">Nope! That's not an option! 😜💕</div>
+
+        <!-- Background Music -->
+        <audio id="bgMusic" loop preload="auto">
+            <source src="tify.mp3" type="audio/mpeg" />
+        </audio>
+
+        <!-- Music Control Button -->
+        <button id="musicToggle" class="music-btn">🎵</button>
+
+        <script src="assets/app.js"></script>
+    </body>
+</html>

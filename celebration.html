@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1.0, user-scalable=no">
+    <title>💖 Lalabs Said Yes! 💖</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <!-- Confetti Canvas -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- Floating Background -->
+    <div class="floating-bg" id="floatingBg"></div>
+
+    <!-- Decorative Elements -->
+    <div class="decoration deco-1">🌻</div>
+    <div class="decoration deco-2">🌸</div>
+    <div class="decoration deco-3">💐</div>
+    <div class="decoration deco-4">🧸</div>
+    <div class="decoration deco-5">🌺</div>
+    <div class="decoration deco-6">🌷</div>
+
+    <!-- Main Content -->
+    <div class="celebration-container">
+        <div class="mega-heart" id="megaHeart" onclick="handleInteraction(event, 'heart')">
+        <img src="balily.png" alt="" width="200">    
+        </div>
+        
+        <div class="main-message">
+            <h1 class="yay-text">
+                YAY! 🎉
+                <span class="name-celebrate">Lalabs Said Yes!</span>
+            </h1>
+            <p class="sub-message">You just made me the happiest person ever! 💕</p>
+        </div>
+
+        <div class="love-card">
+            <span class="corner-deco corner-tl">🦋</span>
+            <span class="corner-deco corner-tr">🦋</span>
+            <span class="corner-deco corner-bl">✨</span>
+            <span class="corner-deco corner-br">✨</span>
+            
+            <h2 class="love-title">💌 Hello Mi lalabss!! 💌</h2>
+            
+            <div class="love-text">
+                <p>From the moment you came into my life, I knew you were someone special. Being with you makes even the simplest days feel meaningful, and honestly, I can’t imagine my life without your smile, your laugh, and the love you give so effortlessly.</p>
+                
+                <p>You make everything <span class="highlight">extraordinary</span>, and I find myself loving you more as time goes by, and I’m so thankful to have you, not just as my partner, but as my best friend and the one I trust the most. 💫</p>
+                
+                <p>Here’s to us, to love, and to all the moments we’re still going to share together. 💕</p>
+                
+                <p class="signature">Forever & Always Yours, ❤️<br>Your Valentine</p>
+            </div>
+        </div>
+
+        <!-- Interactive Buttons -->
+        <div class="buttons-row">
+            <button class="action-btn" onclick="handleInteraction(event, 'confetti')">🎉 More Confetti!</button>
+            <button class="action-btn secondary" onclick="handleInteraction(event, 'hug')">🤗 Embwaaaaaceee!</button>
+        </div>
+
+        <!-- Love Jar Section -->
+        <div class="love-jar-section">
+            <h3 class="love-jar-title">✨ Tap the jar to see why I love you! ✨</h3>
+            <div class="love-jar-container">
+                <div class="love-jar" onclick="handleInteraction(event, 'jar')">🫙</div>
+            </div>
+            <p class="jar-hint">Each tap reveals a reason & fills the love meter! 💕</p>
+        </div>
+
+        <!-- Love Meter - MORPHING INFINITY -->
+        <div class="love-meter-section">
+            <p class="love-meter-title">💕 Our Love Meter 💕</p>
+            
+            <div class="love-meter-wrapper">
+                <!-- Regular Bar -->
+                <div class="love-meter-container" id="loveMeterContainer" onclick="handleInteraction(event, 'meter')">
+                    <div class="love-meter-fill" id="loveMeterFill"></div>
+                </div>
+
+                <!-- Infinity Symbol (Hidden by default) -->
+                <div class="infinity-container" id="infinityContainer">
+                    <span class="infinity-sparkle">✨</span>
+                    <span class="infinity-sparkle">💖</span>
+                    <span class="infinity-sparkle">✨</span>
+                    <span class="infinity-sparkle">💖</span>
+                    
+                    <div class="infinity-svg-wrapper">
+                        <svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Gradient Definition -->
+                            <defs>
+                                <linearGradient id="infinityGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#ff69b4">
+                                        <animate attributeName="stop-color" 
+                                            values="#ff69b4;#ff1493;#a855f7;#ffd700;#ff69b4" 
+                                            dur="3s" repeatCount="indefinite"/>
+                                    </stop>
+                                    <stop offset="25%" style="stop-color:#ff1493">
+                                        <animate attributeName="stop-color" 
+                                            values="#ff1493;#a855f7;#ffd700;#ff69b4;#ff1493" 
+                                            dur="3s" repeatCount="indefinite"/>
+                                    </stop>
+                                    <stop offset="50%" style="stop-color:#a855f7">
+                                        <animate attributeName="stop-color" 
+                                            values="#a855f7;#ffd700;#ff69b4;#ff1493;#a855f7" 
+                                            dur="3s" repeatCount="indefinite"/>
+                                    </stop>
+                                    <stop offset="75%" style="stop-color:#ffd700">
+                                        <animate attributeName="stop-color" 
+                                            values="#ffd700;#ff69b4;#ff1493;#a855f7;#ffd700" 
+                                            dur="3s" repeatCount="indefinite"/>
+                                    </stop>
+                                    <stop offset="100%" style="stop-color:#ff69b4">
+                                        <animate attributeName="stop-color" 
+                                            values="#ff69b4;#ff1493;#a855f7;#ffd700;#ff69b4" 
+                                            dur="3s" repeatCount="indefinite"/>
+                                    </stop>
+                                </linearGradient>
+                            </defs>
+                            
+                            <!-- Background Path -->
+                            <path class="infinity-path infinity-path-bg" 
+                                d="M100,40 C100,40 130,10 160,10 C190,10 190,70 160,70 C130,70 100,40 100,40 C100,40 70,10 40,10 C10,10 10,70 40,70 C70,70 100,40 100,40"/>
+                            
+                            <!-- Animated Fill Path -->
+                            <path class="infinity-path infinity-path-fill" 
+                                d="M100,40 C100,40 130,10 160,10 C190,10 190,70 160,70 C130,70 100,40 100,40 C100,40 70,10 40,10 C10,10 10,70 40,70 C70,70 100,40 100,40"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="love-meter-text" id="loveMeterText">Tap anywhere to fill with love!</p>
+        </div>
+
+   
+    </div>
+
+    <!-- Overlay for popups -->
+    <div class="overlay" id="overlay" onclick="closeLoveNote()"></div>
+
+    <!-- Love Note Popup -->
+    <div class="love-note-popup" id="loveNotePopup">
+        <div class="note-emoji" id="noteEmoji">💕</div>
+        <p class="note-number" id="noteNumber">Reason #1</p>
+        <p class="note-text" id="noteText">Loading...</p>
+        <button class="close-note-btn" onclick="closeLoveNote()">More Love! 💖</button>
+    </div>
+
+    <!-- Virtual Hug Animation - GIF VERSION -->
+    <div class="hug-animation" id="hugAnimation">
+        <!-- Floating hearts around the GIF -->
+        <div class="hug-hearts">
+            <span class="hug-heart">💕</span>
+            <span class="hug-heart">💖</span>
+            <span class="hug-heart">💗</span>
+            <span class="hug-heart">💓</span>
+            <span class="hug-heart">💝</span>
+            <span class="hug-heart">🤗</span>
+        </div>
+        <!-- Replace 'hug.gif' with your actual GIF filename -->
+        <img src="bear-hug2.webp" alt="Virtual Hug" class="hug-gif">
+    </div>
+    <div class="hug-message" id="hugMessage">Sending you the biggest virtual Embwaaaaaace, Lalabs! 🤗💖</div>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop preload="metadata" crossorigin="anonymous">
+        <source src="./tify.mp3" type="audio/mpeg">
+        <source src="tify.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Music Control Button -->
+    <button id="musicToggle" class="music-btn">🎵</button>
+
+    <script src="assets/app.js"></script>
+</body>
+</html>
