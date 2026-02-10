@@ -580,7 +580,7 @@ function playPopSound() {
 }
 
 /* ========== MUSIC (both pages) ========== */
-function setupMusic(startTime = 11) {
+function setupMusic(startTime = 11, autoStart = true) {
     const music = document.getElementById("bgMusic");
     const musicBtn = document.getElementById("musicToggle");
     if (!music || !musicBtn) return;
@@ -677,13 +677,33 @@ function setupMusic(startTime = 11) {
     music.addEventListener("timeupdate", () => {
         if (music.duration - music.currentTime < 0.5) music.currentTime = startTime;
     });
+
+    function tryAutoplay() {
+    music.currentTime = startTime;
+    music.play()
+      .then(() => {
+        isMusicPlaying = true;
+        hasMusicInteracted = true;
+        updateMusicButton();
+      })
+      .catch(addListeners); // fall back to waiting for user
+
+  }
+// instead of calling music.play() directly at the bottom:
+  if (autoStart) {
+    tryAutoplay();          // ⬅️ toggles (starts) on load when allowed
+  } else {
+    addListeners();         // wait for first user interaction
+  }
+
+  // keep visibilitychange + ended + timeupdate handlers as they are
 }
 
 /* ========== INIT: Index page ========== */
 function initIndex() {
     createFloatingItems();
     createParticles();
-    setupMusic(11);
+    setupMusic(11, true);
     console.log("%c💕 A special surprise for Lalabs! 💕", "font-size: 20px; color: #ff69b4;");
     console.log("%c🧸 The teddy is rooting for you!", "font-size: 14px; color: #a855f7;");
 }
@@ -707,7 +727,7 @@ function initCelebration() {
     // updateCountdown();
     // setInterval(updateCountdown, 1000);
     setTimeout(() => burstConfetti(), 500);
-    setupMusic(9);
+    setupMusic(9, true);
 
     setTimeout(() => {
         const autoFill = setInterval(() => {
