@@ -536,31 +536,7 @@ function createClickHeart(e) {
     }
 }
 
-/* ========== CELEBRATION: Countdown ========== */
-// function updateCountdown() {
-//   const section = document.getElementById("countdownSection");
-//   if (!section) return;
-//   const valentinesDay = new Date("February 14, 2025 00:00:00").getTime();
-//   const now = new Date().getTime();
-//   const distance = valentinesDay - now;
-//   if (distance < 0) {
-//     section.innerHTML = `
-//       <p class="countdown-title" style="color: var(--color-primary); font-size: 1.5rem;">🎉 Happy Valentine's Day, Lalabs! 🎉</p>
-//       <p style="color: #e0e0e0; font-size: 1.2rem; margin-top: 10px;">Today is OUR special day! 💕</p>
-//     `;
-//     return;
-//   }
-//   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-//   const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-//   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-//   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-//   const pad = (n) => String(n).padStart(2, "0");
-//   const el = (id) => document.getElementById(id);
-//   if (el("days")) el("days").textContent = pad(days);
-//   if (el("hours")) el("hours").textContent = pad(hours);
-//   if (el("minutes")) el("minutes").textContent = pad(minutes);
-//   if (el("seconds")) el("seconds").textContent = pad(seconds);
-// }
+
 
 /* ========== CELEBRATION: Sound ========== */
 function playPopSound() {
